@@ -7,10 +7,13 @@
 	<link rel="stylesheet" type="text/css" href="assets/css/font-awesome.min.css">
 	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+	<script src="assets/js/edit.js"></script>
 </head>
 <body>
 	<div id="menu">
-		<a href="index.html"><div class="back">
+		<a href="index.html"><div id="back">
 			<li class="fa fa-arrow-left"></li> Back
 		</div></a>
 		<div class="section">
@@ -37,9 +40,12 @@
 			<div class="customization"><label>TEST 1</label> <input type="text"> <button>Test 1</button></div>
 			<div class="customization"><label>TEST 2</label> <input type="text"> <button>Test 2</button></div>
 		</div>
-		<div class="hide">
+		<div id="hide">
 			<i class="fa fa-eye-slash"></i> Hide
 		</div>
+	</div>
+	<div id="show">
+		<i class="fa fa-eye"></i> Show
 	</div>
 	<div id="visualization">
 		visualization
