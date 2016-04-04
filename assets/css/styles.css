@@ -2,6 +2,7 @@ body {
 	margin:0px;
 	padding:0px;
 	font-family:"Open Sans",sans-serif;
+	background-color:rgba(0,0,0,0.8);
 }
 
 #menu {
@@ -81,15 +82,21 @@ button { padding:10px; width:81px; font-size:16px; border-radius:0px; border:0px
 	line-height:40px;
 	text-align:center;
 	bottom:0px;
-	background-color:rgba(255,255,255,0.1);
+	background-color:rgba(255,255,255,0.5);
 	cursor:pointer;
 	z-index:0;
 }
 
 #visualization {
 	position:fixed;
+	right:0px;
+	bottom:0px;
+	top:0px;
+	margin:auto;
 	width:2048px;
 	height:1536px;
 	background-color:rgba(0,0,0,.9);
+	background-image:url('../images/testImage.jpg');
+	background-size:100% 100%;
 	z-index:-1;
 }
