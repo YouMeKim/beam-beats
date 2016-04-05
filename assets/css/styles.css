@@ -9,14 +9,15 @@ body {
 /* INDEX */
 /*********/
 
-#wrapper {
+#index-wrapper {
 	display: flex;
 	align-items: center;
+	overflow:auto;
 	padding:0px;
 	margin:0px;
+	width:100%;
 	height:100vh;
 }
-
 #welcome-message {
 	width:800px;
 	margin:0px auto;
@@ -27,6 +28,24 @@ body {
 	vertical-align: middle;
 	color:rgba(255,255,255,0.8);
 	cursor:pointer;
+	z-index:3;
+}
+#cover {
+	position:absolute;
+	top:0px;
+	left:0px;
+	width:100%;
+	height:100vh;
+	background-color:rgba(50,50,50,1);
+	z-index:2;
+}
+#index-content {
+	padding:20px;
+}
+#search {
+	position:absolute;
+	top:20px;
+	right:20px;
 }
 
 /********/
