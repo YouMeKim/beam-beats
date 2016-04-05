@@ -32,6 +32,7 @@ function toggleMenu() {
 
 function toggleVisualizationSize() {
 	var bigWidth = $(this).width();
+	var visContainerWidth = bigWidth -460;
 	var smallWidth = bigWidth - 460;
 	var windowHeight = $(this).height();
 	var ratio = visWidth/visHeight;
@@ -49,6 +50,7 @@ function toggleVisualizationSize() {
 		$("#visualization").animate({height:smallHeight}, { duration: 300, queue: false });
 		$("#visualization").animate({height:smallHeight}, { duration: 300, queue: false });
 		$("#visualization").animate({height:smallHeight}, { duration: 300, queue: false });
+		$('#visualization-container').animate({width:visContainerWidth}, {duration: 300, queue: false});
 	} else {
 		var bigHeight = visHeight * ratio;
 		var ratio = bigWidth/bigHeight;
@@ -59,5 +61,6 @@ function toggleVisualizationSize() {
 		}
 		$("#visualization").animate({width:bigWidth}, { duration: 300, queue: false });
 		$("#visualization").animate({height:bigHeight}, { duration: 300, queue: false });
+		$('#visualization-container').animate({width:'100%'}, {duration: 300, queue: false});
 	}
 }
