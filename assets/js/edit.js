@@ -41,7 +41,6 @@ function toggleVisualizationSize() {
 		var ratio = smallWidth/visWidth;
 		var smallHeight = visHeight * ratio;
 		if (smallHeight > windowHeight) {
-			console.log("bigger");
 			ratio = windowHeight/visHeight;
 			var smallWidth = visWidth * ratio;
 			var smallHeight = windowHeight;
