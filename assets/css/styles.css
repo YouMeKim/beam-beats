@@ -10,8 +10,7 @@ body {
 /*********/
 
 #index-wrapper {
-	display: flex;
-	align-items: center;
+	display:block;
 	overflow:auto;
 	padding:0px;
 	margin:0px;
@@ -19,8 +18,11 @@ body {
 	height:100vh;
 }
 #welcome-message {
+	margin: auto;
+	position: absolute;
+	top: 0; left: 0; bottom: 0; right: 0;
 	width:800px;
-	margin:0px auto;
+	height:300px;
 	padding:0px;
 	font-size:30px;
 	font-weight:600;
@@ -28,7 +30,7 @@ body {
 	vertical-align: middle;
 	color:rgba(255,255,255,0.8);
 	cursor:pointer;
-	z-index:3;
+	z-index:3 !important;
 }
 #cover {
 	position:absolute;
@@ -40,13 +42,32 @@ body {
 	z-index:2;
 }
 #index-content {
+	width:1000px;
 	padding:20px;
+	margin:0px auto;
+}
+#logo {
+	position:absolute;
+	top:20px;
+	left:20px;
 }
 #search {
 	position:absolute;
 	top:20px;
 	right:20px;
 }
+.vis-large {
+	width:1000px;
+	height:500px;
+	margin-bottom:10px;
+}
+.vis-small {
+	float:left;
+	width:320px;
+	height:160px;
+	margin:10px 0px 10px 20px;
+}
+.vis-no-border { margin-left:0px; }
 
 /********/
 /* EDIT */
