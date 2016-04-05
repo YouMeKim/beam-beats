@@ -187,7 +187,7 @@ button { padding:10px; width:81px; font-size:16px; border-radius:0px; border:0px
 	width:2048px;
 	height:1536px;
 	background-color:rgba(0,0,0,.9);
-	background-image:url('../images/testImage.jpg');
+	background-image:url('http://loremflickr.com/2048/1536');
 	background-size:100% 100%;
 	z-index:-1;
 }
