@@ -1,0 +1,125 @@
+body {
+	margin:0px;
+	padding:0px;
+	font-family:"Open Sans",sans-serif;
+	background-color:rgba(0,0,0,0.8);
+}
+
+#menu {
+	position:fixed;
+	overflow:auto;
+	padding:30px;
+	width:400px;
+	height:96%;
+	background-color:rgba(161,161,161,1);
+	z-index:1;
+}
+#back {
+	float:left;
+	width:90px;
+	height:40px;
+	line-height:40px;
+	text-align:center;
+	background-color:rgba(0,0,0,0.1);
+	color:rgba(255,255,255,0.7);
+	cursor:pointer;
+}
+.section {
+	overflow:auto;
+	width:100%;
+}
+.section:nth-child(4) { margin-bottom:20px; }
+.section h1 { font-size:26px; }
+.design {
+	float:left;
+	margin:0px 6% 20px 0px;
+	width:47%;
+	height:80px;
+	line-height:80px;
+	text-align:center;
+	color:rgba(255,255,255,0.9);
+	background-color:rgba(0,0,0,0.4);
+}
+.design:nth-child(2n-1) { margin-right:0px; }
+.logo {
+	float:left;
+	margin:0px 6% 20px 0px;
+	width:29%;
+	height:60px;
+	line-height:60px;
+	text-align:center;
+	color:rgba(255,255,255,0.9);
+	background-color:rgba(0,0,0,0.4);
+}
+.logo:nth-child(3n-2) { margin-right:0px; }
+#hide {
+	float:right;
+	margin-bottom:30px;
+	width:90px;
+	height:40px;
+	line-height:40px;
+	text-align:center;
+	bottom:0px;
+	background-color:rgba(0,0,0,0.1);
+	cursor:pointer;
+}
+.customization {
+	width:100%;
+	margin-bottom:10px;
+}
+#email-button {
+	position:absolute;
+	right:20px;
+	bottom:20px;
+	width:180px;
+	height:40px;
+	color:rgba(0,0,0,0.9);
+	background-color:rgba(255,255,255,0.9);
+	cursor:pointer;
+}
+#email-modal {
+	text-align:center;
+}
+#print-button {
+	position:absolute;
+	right:220px;
+	bottom:20px;
+	width:180px;
+	height:40px;
+	color:rgba(0,0,0,0.9);
+	background-color:rgba(255,255,255,0.9);
+	cursor:pointer;
+}
+form { font-size:16px; }
+label { display:inline-block; width:75px; font-size:18px; font-weight:700; }
+input { padding:10px; width:200px; font-size:16px; border-radius:0px; border:0px; }
+button { padding:10px; width:81px; font-size:16px; border-radius:0px; border:0px; }
+
+#show {
+	position:absolute;
+	left:30px;
+	bottom:30px;
+	margin-bottom:30px;
+	width:90px;
+	height:40px;
+	line-height:40px;
+	text-align:center;
+	bottom:0px;
+	background-color:rgba(255,255,255,0.5);
+	cursor:pointer;
+	z-index:0;
+}
+
+#visualization {
+	position:fixed;
+	right:0px;
+	bottom:0px;
+	top:0px;
+	margin:auto;
+	width:2048px;
+	height:1536px;
+	background-color:rgba(0,0,0,.9);
+	background-image:url('../images/testImage.jpg');
+	background-size:100% 100%;
+	z-index:-1;
+}
