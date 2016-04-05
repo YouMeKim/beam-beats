@@ -5,6 +5,16 @@ var visHeight = 1536;
 $(document).ready(function() {
 	$('#hide').click(toggleMenu);
 	$('#show').click(toggleMenu);
+	$( "#email-modal" ).dialog({
+		autoOpen: false,
+		width: '600px'
+	});
+	$('#email-button').click(function() {
+		$( "#email-modal" ).dialog( "open" );
+	});
+	$('#print-button').click(function() {
+		console.log("printing..");
+	});
 
 	toggleVisualizationSize();
 });
