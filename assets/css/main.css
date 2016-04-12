@@ -1,3 +1,56 @@
 body {
+    padding: 0px;
+    margin: 0px;
     font-family: "NeutrafaceDisplay",sans-serif;
+}
+
+#viewer {
+    padding: 0px;
+    margin: 0px;
+    width: 100%;
+    min-height: 100vh;
+    padding: 0px;
+    margin: 0px;
+    overflow: auto;
+}
+
+/***********/
+/* WELCOME */
+/***********/
+
+#welcome {
+    width: 100%;
+    height: 100%;
+}
+#welcome-bg {
+    position: absolute;
+    width: 770px;
+    height: 403px;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-image: url('../img/BBLogo.png');
+    background-repeat: no-repeat;
+    opacity: .4;
+    z-index: -1;
+}
+#welcome-welcome {
+    text-align: center;
+    width: 100%;
+    font-size: 230px;
+    font-weight: 600;
+    line-height: 200px;
+    color: #353535;
+}
+#welcome-tap {
+    text-align: center;
+    width: 100%;
+    font-size: 50px;
+    font-weight: 500;
+    line-height: 80px;
+    color: #888888;
 }
