@@ -28,7 +28,7 @@ body {
 
 #welcome {
     width: 100%;
-    min-height: 100vh;
+    height: 100vh;
 }
 #welcome-bg {
     position: absolute;
@@ -79,7 +79,7 @@ body {
 
 #instructions {
     width: 100%;
-    min-height: 100vh;
+    height: 100vh;
 }
 #instructions-content {
     position: relative;
@@ -147,4 +147,10 @@ body {
 #list-recent-img {
     width: 874px;
     height: 874px;
+}
+#list-scroll-arrow {
+    display: inline-block;
+    position: relative;
+    top: -5px;
+    font-size: 50%;
 }
