@@ -1,12 +1,10 @@
-var currentStep = 1;
-//var currentStep = 3;
+var currentStep = 3;
 
 $(document).ready(function() {
     $('#welcome-content').click(nextStep);
     $('#instructions-button').click(nextStep);
 
-    moveTo("welcome");
-    //moveTo("list");
+    moveTo("list");
 });
 
 function nextStep() {
