@@ -141,3 +141,134 @@ body {
     text-align: center;
     color: #929292;
 }
+#list-recent {
+    width: 764px;
+    height: 480px;
+    margin: 0px auto 76px auto;
+    padding: 0px;
+}
+#list-recent-image {
+    float: left;
+    width: 480px;
+    height: 480px;
+    margin: 0px;
+    padding: 0px;
+    background-image: url("../img/sample.png");
+    background-size: 480px 480px;
+    background-repeat: no-repeat;
+}
+#list-recent-text {
+    float: left;
+    position: relative;
+    width: 284px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+#list-recent-title {
+    margin: 0px;
+    padding: 0px;
+    font-size: 40px;
+    line-height: 40px;
+    font-weight: 600;
+    color: #ededed;
+    text-align: center;
+}
+#list-recent-time {
+    margin: 29px 0px 51px 0px;
+    padding: 0px;
+    font-size: 15px;
+    line-height: 15px;
+    font-weight: 500;
+    color: #7b7b7b;
+    text-align: center;
+}
+.list-button {
+    display: block;
+    width: 185px;
+    height: 47px;
+    padding: 0px auto;
+    margin: 0px auto;
+    font-size: 15px;
+    text-align: center;
+    font-weight: 500;
+    background-color: #2f66d5;
+    color: #fafafa;
+    border: 0px;
+    border-radius: 23px;
+    cursor: pointer;
+}
+.list-button:nth-child(3) {
+    margin-bottom: 21px;
+}
+#list-scroll {
+    padding: 0px;
+    margin: 0px 0px 12px 0px;
+    text-align: center;
+    font-weight: 500;
+    font-size: 12px;
+    color: #7f7f80;
+}
+#list-scroll-arrow {
+    width: 27px;
+    height: 13px;
+    padding: 0px;
+    margin: 0px auto 50px auto;
+    background-image: url("../img/scroll.png");
+    background-size: 27px 13px;
+    background-repeat: no-repeat;
+}
+#list-all {
+    width: 850px;
+    padding: 0px;
+    margin: 0px auto;
+    overflow: auto;
+}
+.container {
+    float: left;
+    width: 270px;
+    padding: 0px;
+    margin: 0px 20px 20px 0px;
+}
+.container:nth-child(3n) { margin: 0px 0px 0px 0px; }
+.preview {
+    width: 230px;
+    height: 230px;
+    padding: 20px;
+    margin: 0px;
+    /* background-color: #29253b; */
+    /* gradient from top to bottom from #29253b to #28212b */
+    background: #29253b; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(180deg, #29253b, #28212b); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(180deg, #29253b, #28212b); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(180deg, #29253b, #28212b); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(180deg, #29253b, #28212b); /* Standard syntax */
+}
+.preview-title {
+    float: left;
+    padding: 0px;
+    margin: 0px;
+    font-size: 15px;
+    font-weight: 600;
+    color: #ededed;
+}
+.preview-time {
+    float: right;
+    padding: 0px;
+    margin: 0px;
+    font-size: 15px;
+    font-weight: 500;
+    color: #7b7b7b;
+}
+#list-show-more{
+    padding: 0px;
+    margin: 43px auto 41px auto;
+    text-align: center;
+    font-size: 15px;
+    font-weight: 600;
+    color: #2f66d5;
+    cursor: pointer;
+}
+
+/********/
+/* EDIT */
+/********/
