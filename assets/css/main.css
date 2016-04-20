@@ -37,8 +37,10 @@ body {
     background-size: 54px 45px;
 }
 .nav-search {
-    position: relative;
+    position: absolute;
     float: right;
+    top: 0px;
+    right: 0px;
     padding: 21px 21px;
     color: #bcbcbc;
     cursor: pointer;
@@ -235,8 +237,6 @@ body {
     height: 230px;
     padding: 20px;
     margin: 0px;
-    /* background-color: #29253b; */
-    /* gradient from top to bottom from #29253b to #28212b */
     background: #29253b; /* For browsers that do not support gradients */
     background: -webkit-linear-gradient(180deg, #29253b, #28212b); /* For Safari 5.1 to 6.0 */
     background: -o-linear-gradient(180deg, #29253b, #28212b); /* For Opera 11.1 to 12.0 */
@@ -272,3 +272,35 @@ body {
 /********/
 /* EDIT */
 /********/
+#edit-nav-title {
+    padding: 0px;
+    margin: 0px;
+    text-align: center;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 61px;
+    color: #ededed;
+}
+#edit-menu {
+    float: left;
+    width: 380px;
+    min-height: 100vh;
+    padding: 125px 34px 64px 34px;
+    background-color: #151214;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+#edit-menu h1 {
+    padding: 0px;
+    margin: 0px;
+    font-weight: 600;
+    font-size: 15px;
+    text-align: left;
+    line-height: 13px;
+    color: #7b7b7b;
+}
+#edit-container {
+    min-height: 100vh;
+    background-color: #f0f0f0;
+}
