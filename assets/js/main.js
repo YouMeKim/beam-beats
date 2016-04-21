@@ -4,6 +4,10 @@ $(document).ready(function() {
     $('#list-show-more').click(loadMoreEntries);
     $('#list-button-edit').click(editVis);
     $('#list-button-email').click();
+    $('#nav-exit').click(function() {
+        currentStep = 2;
+        nextStep();
+    });
 
     nextStep();
 });

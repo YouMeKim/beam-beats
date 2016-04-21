@@ -36,7 +36,7 @@ body {
     background-image: url("../img/BBLogoMini.png");
     background-size: 54px 45px;
 }
-.nav-search {
+.nav-button {
     position: absolute;
     float: right;
     top: 0px;
