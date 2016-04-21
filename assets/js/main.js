@@ -8,6 +8,15 @@ $(document).ready(function() {
         currentStep = 2;
         nextStep();
     });
+    $('.swatch-color').click(function(event) {
+        changeColor(event.target.id);
+    });
+    $('.swatch-logo').click(function(event) {
+        changeLogo(event.target.id);
+    });
+    $('.swatch-size').click(function(event) {
+        changeSize(event.target.id);
+    });
 
     nextStep();
 });
@@ -75,4 +84,24 @@ var id = "";
 
 function editVis () {
     moveTo("edit");
+}
+
+function changeColor(nodeID) {
+    var activeOne = $('#' + nodeID);
+    $('.swatch-color').removeClass('active');
+    activeOne.addClass('active');
+}
+
+function changeLogo(nodeID) {
+    var activeOne = $('#' + nodeID);
+    $('.swatch-logo').removeClass('active');
+    $('.swatch-logo').css('background-position','0px 0px');
+    activeOne.addClass('active');
+    activeOne.css('background-position','-5px -5px');
+}
+
+function changeSize(nodeID) {
+    var activeOne = $('#' + nodeID);
+    $('.swatch-size').removeClass('active');
+    activeOne.addClass('active');
 }
