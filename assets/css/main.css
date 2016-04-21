@@ -272,6 +272,10 @@ body {
 /********/
 /* EDIT */
 /********/
+#edit {
+    background-color: #f0f0f0;
+    overflow: auto;
+}
 #edit-nav-title {
     padding: 0px;
     margin: 0px;
@@ -303,4 +307,20 @@ body {
 #edit-container {
     min-height: 100vh;
     background-color: #f0f0f0;
+}
+#edit-button-next {
+    display: block;
+    width: 170px;
+    height: 52px;
+    padding: 0px auto;
+    margin: 0px auto;
+    font-size: 15px;
+    letter-spacing: 0.05em;
+    text-align: center;
+    font-weight: 400;
+    background-color: #2f66d5;
+    color: #fafafa;
+    border: 0px;
+    border-radius: 26px;
+    cursor: pointer;
 }
