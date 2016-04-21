@@ -2,14 +2,27 @@
     margin: 16px 0px 53px;
     overflow: auto;
 }
-.swatch {
+.swatch-all {
     float: left;
     padding: 0px;
     margin: 0px 15px 0px 0px;
+    overflow: auto;
+}
+.swatch-all:nth-child(5) { margin-right: 0px; }
+.swatch {
+    padding: 0px;
+    margin: 0px;
     width: 50px;
     height: 50px;
 }
-.swatch:nth-child(5) { margin-right: 0px; }
+.swatch-title {
+    padding: 0px;
+    margin: 14px 0px 0px 0px;
+    text-align: left;
+    font-size: 13px;
+    font-weight: 500;
+    color: #bbbbbc;
+}
 .active {
     border: 5px solid #ebebeb;
     -webkit-box-sizing: border-box;
