@@ -4,7 +4,11 @@ $(document).ready(function() {
     $('#list-show-more').click(loadMoreEntries);
     $('#list-button-edit').click(nextStep);
     $('#list-button-email').click();
-    $('#nav-exit').click(function() {
+    $('#list-button-email').click(function() {
+        currentStep = 4;
+        nextStep();
+    });
+    $('#discard-edits-yes').click(function() {
         currentStep = 2;
         nextStep();
     });
@@ -32,7 +36,7 @@ $(document).ready(function() {
 /* CONTROL PAGE CHANGE */
 /***********************/
 
-var currentStep = 4;
+var currentStep = 3;
 
 function nextStep() {
     currentStep++;
