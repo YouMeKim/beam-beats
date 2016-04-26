@@ -17,6 +17,10 @@ $(document).ready(function() {
     $('.swatch-size').click(function(event) {
         changeSize(event.target.id);
     });
+    $('.layout-container').click(function(event) {
+        changeLayout(event.target.id);
+    });
+    $('#full-screen').click(fullScreenImage);
 
     nextStep();
 });
@@ -97,11 +101,47 @@ function changeLogo(nodeID) {
     $('.swatch-logo').removeClass('active');
     $('.swatch-logo').css('background-position','0px 0px');
     activeOne.addClass('active');
-    activeOne.css('background-position','-5px -5px');
+    activeOne.css('background-position','-3px -3px');
 }
 
 function changeSize(nodeID) {
     var activeOne = $('#' + nodeID);
     $('.swatch-size').removeClass('active');
     activeOne.addClass('active');
+}
+
+function changeLayout(nodeID) {
+    var editImageContainer = $('#edit-image-container');
+    var editImage = $('#edit-image');
+
+    if (nodeID.indexOf("-") > -1) {
+        nodeID = nodeID.split("-")[0];
+    }
+
+    if (nodeID == "portrait") {
+        editImageContainer.css("width", "356px");
+        editImageContainer.css("height", "562px");
+        editImageContainer.css("margin-top", "36px");
+        editImageContainer.css("margin-bottom", "30px");
+        editImage.css("width", "356px");
+        editImage.css("height", "562px");
+    } else {
+        editImageContainer.css("width", "562px");
+        editImageContainer.css("height", "356px");
+        editImageContainer.css("margin-top", "139px");
+        editImageContainer.css("margin-bottom", "133px");
+        editImage.css("width", "562px");
+        editImage.css("height", "356px");
+    }
+
+    var layout = nodeID + "-layout";
+    var title = nodeID + "-title";
+    $('.layout').removeClass('layout-active');
+    $('.layout-title').removeClass('layout-title-active');
+    $('#' + layout).addClass('layout-active');
+    $('#' + title).addClass('layout-title-active');
+}
+
+function fullScreenImage() {
+    console.log("full screen image");
 }
