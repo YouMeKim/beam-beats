@@ -2,7 +2,7 @@ $(document).ready(function() {
     $('#welcome-content').click(nextStep);
     $('#instructions-button').click(nextStep);
     $('#list-show-more').click(loadMoreEntries);
-    $('#list-button-edit').click(editVis);
+    $('#list-button-edit').click(nextStep);
     $('#list-button-email').click();
     $('#nav-exit').click(function() {
         currentStep = 2;
@@ -21,6 +21,9 @@ $(document).ready(function() {
         changeLayout(event.target.id);
     });
     $('#full-screen').click(fullScreenImage);
+    $('#edit-button-next').click(nextStep);
+    $('#email-button').click(nextStep);
+    $('#success-button').click(nextStep);
 
     nextStep();
 });
@@ -29,7 +32,7 @@ $(document).ready(function() {
 /* CONTROL PAGE CHANGE */
 /***********************/
 
-var currentStep = 3;
+var currentStep = 4;
 
 function nextStep() {
     currentStep++;
@@ -45,6 +48,12 @@ function nextStep() {
             break;
         case 4:
             moveTo("edit");
+            break;
+        case 5:
+            moveTo("email");
+            break;
+        case 6:
+            moveTo("success");
             break;
         default:
             moveTo("welcome");
@@ -85,10 +94,6 @@ function loadMoreEntries() {
 /**********************/
 
 var id = "";
-
-function editVis () {
-    moveTo("edit");
-}
 
 function changeColor(nodeID) {
     var activeOne = $('#' + nodeID);
