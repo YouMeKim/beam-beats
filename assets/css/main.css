@@ -2,16 +2,48 @@ body {
     padding: 0px;
     margin: 0px;
     font-family: "NeutrafaceDisplay",sans-serif;
+    background-color: #150f17;
 }
 
 #viewer {
     padding: 0px;
     margin: 0px;
     width: 100%;
-    min-height: 100vh;
     padding: 0px;
     margin: 0px;
-    overflow: auto;
+}
+
+.step {
+    text-align: center;
+    font-size: 18px;
+    font-weight: 500;
+    color: #ededed;
+}
+.nav {
+    position: absolute;
+    top: 0px;
+    width: 100%;
+    height: 61px;
+    padding: 0px;
+    margin: 0px;
+    background-color: #1d1e1f;
+}
+.nav-image {
+    float: left;
+    width: 54px;
+    height: 45px;
+    margin: 8px 14px;
+    background-image: url("../img/BBLogoMini.png");
+    background-size: 54px 45px;
+}
+.nav-button {
+    position: absolute;
+    float: right;
+    top: 0px;
+    right: 0px;
+    padding: 21px 21px;
+    color: #bcbcbc;
+    cursor: pointer;
 }
 
 /***********/
@@ -20,37 +52,490 @@ body {
 
 #welcome {
     width: 100%;
-    height: 100%;
+}
+#welcome-content {
+    cursor: pointer;
 }
 #welcome-bg {
-    position: absolute;
-    width: 770px;
-    height: 403px;
-    margin-left: auto;
-    margin-right: auto;
-    left: 0;
-    right: 0;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    width: 445px;
+    height: 360px;
+    margin: 79px auto 95px auto;
     background-image: url('../img/BBLogo.png');
     background-repeat: no-repeat;
-    opacity: .4;
+    background-size: 445px 360px;
     z-index: -1;
 }
 #welcome-welcome {
     text-align: center;
-    width: 100%;
-    font-size: 230px;
+    padding: 0px;
+    margin:0px auto 43px auto;
+    font-size: 50px;
     font-weight: 600;
-    line-height: 200px;
-    color: #353535;
+    color: #f5f5f5;
+    cursor: pointer;
 }
 #welcome-tap {
     text-align: center;
-    width: 100%;
-    font-size: 50px;
+    padding: 0px;
+    margin:0px auto;
+    font-size: 23px;
     font-weight: 500;
-    line-height: 80px;
-    color: #888888;
+    color: #4d4d4d;
+    cursor: pointer;
 }
+
+/****************/
+/* INSTRUCTIONS */
+/****************/
+
+#instructions {
+    width: 100%;
+    height: 100vh;
+}
+#instructions-content {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+#instructions-edit {
+    width: 546px;
+    height: 42px;
+    margin: 46px auto 79px auto;
+    background-image: url("../img/editYourVisuals.png");
+    background-size: 546px 42px;
+    background-repeat: no-repeat;
+}
+#instructions-instructions {
+    text-align: center;
+    font-size: 23px;
+    line-height: 45px;
+    font-weight: 500;
+    color: #7b7b7b;
+}
+#instructions-button {
+    display: block;
+    width: 234px;
+    height: 72px;
+    margin: 154px auto 0px auto;
+    font-size: 25px;
+    text-align: center;
+    color: #fafafa;
+    background-color: #2f66d5;
+    border: 0px;
+    border-radius: 36px;
+    cursor: pointer;
+}
+
+/********/
+/* LIST */
+/********/
+
+#list {
+
+}
+#list-content {
+    margin-top: 61px;
+}
+#list-most-recent {
+    margin: 104px auto 28px auto;
+    font-size: 15px;
+    font-weight: 500;
+    text-align: center;
+    color: #929292;
+}
+#list-recent {
+    width: 764px;
+    height: 480px;
+    margin: 0px auto 76px auto;
+    padding: 0px;
+}
+#list-recent-image {
+    float: left;
+    width: 480px;
+    height: 480px;
+    margin: 0px;
+    padding: 0px;
+    background-image: url("../img/sample.png");
+    background-size: 480px 480px;
+    background-repeat: no-repeat;
+}
+#list-recent-text {
+    float: left;
+    position: relative;
+    width: 284px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+#list-recent-title {
+    margin: 0px;
+    padding: 0px;
+    font-size: 40px;
+    line-height: 40px;
+    font-weight: 600;
+    color: #ededed;
+    text-align: center;
+}
+#list-recent-time {
+    margin: 29px 0px 51px 0px;
+    padding: 0px;
+    font-size: 15px;
+    line-height: 15px;
+    font-weight: 500;
+    color: #7b7b7b;
+    text-align: center;
+}
+.list-button {
+    display: block;
+    width: 185px;
+    height: 47px;
+    padding: 0px auto;
+    margin: 0px auto;
+    font-size: 15px;
+    text-align: center;
+    font-weight: 500;
+    background-color: #2f66d5;
+    color: #fafafa;
+    border: 0px;
+    border-radius: 23px;
+    cursor: pointer;
+}
+.list-button:nth-child(3) {
+    margin-bottom: 21px;
+}
+#list-scroll {
+    padding: 0px;
+    margin: 0px 0px 12px 0px;
+    text-align: center;
+    font-weight: 500;
+    font-size: 12px;
+    color: #7f7f80;
+}
+#list-scroll-arrow {
+    width: 27px;
+    height: 13px;
+    padding: 0px;
+    margin: 0px auto 50px auto;
+    background-image: url("../img/scroll.png");
+    background-size: 27px 13px;
+    background-repeat: no-repeat;
+}
+#list-all {
+    width: 850px;
+    padding: 0px;
+    margin: 0px auto;
+    overflow: auto;
+}
+.container {
+    float: left;
+    width: 270px;
+    padding: 0px;
+    margin: 0px 20px 20px 0px;
+}
+.container:nth-child(3n) { margin: 0px 0px 0px 0px; }
+.preview {
+    width: 230px;
+    height: 230px;
+    padding: 20px;
+    margin: 0px;
+    background: #29253b; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(180deg, #29253b, #28212b); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(180deg, #29253b, #28212b); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(180deg, #29253b, #28212b); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(180deg, #29253b, #28212b); /* Standard syntax */
+}
+.preview-title {
+    float: left;
+    padding: 0px;
+    margin: 0px;
+    font-size: 15px;
+    font-weight: 600;
+    color: #ededed;
+}
+.preview-time {
+    float: right;
+    padding: 0px;
+    margin: 0px;
+    font-size: 15px;
+    font-weight: 500;
+    color: #7b7b7b;
+}
+#list-show-more{
+    padding: 0px;
+    margin: 43px auto 41px auto;
+    text-align: center;
+    font-size: 15px;
+    font-weight: 600;
+    color: #2f66d5;
+    cursor: pointer;
+}
+
+/********/
+/* EDIT */
+/********/
+#edit {
+    background-color: #f0f0f0;
+    overflow: auto;
+}
+#edit-nav-title {
+    padding: 0px;
+    margin: 0px;
+    text-align: center;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 61px;
+    color: #ededed;
+}
+#edit-menu {
+    float: left;
+    width: 380px;
+    min-height: 100vh;
+    padding: 125px 34px 64px 34px;
+    background-color: #151214;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+#edit-menu h1 {
+    padding: 0px;
+    margin: 0px;
+    font-weight: 600;
+    font-size: 15px;
+    text-align: left;
+    line-height: 13px;
+    color: #7b7b7b;
+}
+#edit-container {
+    margin: 0px 0px 0px 380px;
+    padding: 61px 0px 0px 0px;
+    background-color: #f0f0f0;
+}
+#edit-button-next {
+    display: block;
+    width: 170px;
+    height: 52px;
+    padding: 0px auto;
+    margin: 0px auto;
+    font-size: 15px;
+    letter-spacing: 0.05em;
+    text-align: center;
+    font-weight: 400;
+    background-color: #2f66d5;
+    color: #fafafa;
+    border: 0px;
+    border-radius: 26px;
+    cursor: pointer;
+}
+#edit-image-container {
+    position: relative;
+    margin: 36px auto 30px auto;
+    padding: 15px;
+    width: 356px;
+    height: 562px;
+    background-color: #fafafa;
+}
+#edit-image {
+    position: relative;
+    width: 356px;
+    height: 562px;
+    margin: 0px;
+    padding: 0px;
+    background-color: #000000;
+}
+#image {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    display: block;
+    width: 293px;
+    height: 293px;
+    margin: 0px auto;
+}
+#edit-layouts {
+    width: 282px;
+    height: 29px;
+    margin: 0px auto;
+    font-weight: 500;
+    font-size: 13px;
+    text-align: center;
+    color: #b3b3b3;
+}
+.layout-container {
+    float: left;
+    margin: 0px 16px;
+    cursor: pointer;
+}
+.layout {
+    float: left;
+    margin: 0px 9px;
+    background-color: #eaeaea;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    border: 1px solid #b2b2b2;
+}
+.layout-active { border: 3px solid #7d7d7d; }
+.layout-title-active { color: #4f4f4f; }
+#portrait-layout {
+    width: 22px;
+    height: 29px;
+}
+#landscape-layout {
+    width: 29px;
+    height: 22px;
+    margin: 3.5px 9px;
+}
+.layout-title {
+    float: left;
+    margin: 8px 0px;
+    height: 13px;
+}
+#full-screen {
+    position: absolute;
+    right: 14px;
+    bottom: 14px;
+    width: 22px;
+    height: 22px;
+    line-height: 22px;
+    padding: 0px;
+    margin: 0px;
+    text-align: center;
+    color: #b2b2b2;
+    cursor: pointer;
+}
+
+/*********/
+/* EMAIL */
+/*********/
+
+#email {
+    width: 100%;
+    height: 100vh;
+}
+#email-content {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+#email-edit {
+    width: 625px;
+    height: 43px;
+    margin: 46px auto 79px auto;
+    background-image: url("../img/whatsYourEmail.png");
+    background-size: 625px 43px;
+    background-repeat: no-repeat;
+}
+#email-instructions {
+    margin: 0px 0px 109px 0px;
+    text-align: center;
+    font-size: 23px;
+    line-height: 45px;
+    font-weight: 500;
+    color: #7b7b7b;
+}
+#email-email {
+    display: block;
+    width: 625px;
+    padding: 10px;
+    margin: 0px auto;
+    background-color: rgba(0,0,0,0);
+    font-size: 45px;
+    font-family: "NeutrafaceDisplay",sans-serif;
+    font-weight: 500;
+    color: #858585;
+    border: 0px;
+    border-bottom: 1px solid #858585;
+}
+#email-button {
+    display: block;
+    width: 234px;
+    height: 72px;
+    margin: 54px auto 0px auto;
+    font-size: 25px;
+    text-align: center;
+    color: #fafafa;
+    background-color: #2f66d5;
+    border: 0px;
+    border-radius: 36px;
+    cursor: pointer;
+}
+
+/***********/
+/* SUCCESS */
+/***********/
+
+#success {
+    width: 100%;
+    height: 100vh;
+}
+#success-content {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+#success-edit {
+    width: 460px;
+    height: 42px;
+    margin: 46px auto 79px auto;
+    background-image: url("../img/youreAllSet.png");
+    background-size: 460px 42px;
+    background-repeat: no-repeat;
+}
+#success-instructions {
+    text-align: center;
+    font-size: 23px;
+    line-height: 45px;
+    font-weight: 500;
+    color: #7b7b7b;
+}
+#success-button {
+    display: block;
+    width: 234px;
+    height: 72px;
+    margin: 154px auto 0px auto;
+    font-size: 25px;
+    text-align: center;
+    color: #fafafa;
+    background-color: #2f66d5;
+    border: 0px;
+    border-radius: 36px;
+    cursor: pointer;
+}
+
+/**********/
+/* MODALS */
+/**********/
+
+.remodal h1 {
+    font-size: 40px;
+    font-weight: 600;
+    text-align: center;
+    letter-spacing: 0.03em;
+    color: #2e2e2e;
+}
+.remodal p {
+    font-size: 19px;
+    font-weight: 500;
+    text-align: center;
+    letter-spacing: 0.05em;
+    color: #767676;
+}
+.remodal .buttons {
+    width: auto;
+    margin: 0px auto;
+    text-align: center;
+    overflow: auto;
+}
+.modal-button {
+    display: inline-block;
+    width: 234px;
+    height: 72px;
+    font-size: 25px;
+    text-align: center;
+    letter-spacing: 0.05em;
+    color: #fafafa;
+    background-color: #2f66d5;
+    border: 0px;
+    border-radius: 36px;
+    cursor: pointer;
+}
+.modal-button-later { margin-left: 41px; }
