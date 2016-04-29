@@ -325,16 +325,16 @@ body {
 }
 #edit-image-container {
     position: relative;
-    margin: 36px auto 30px auto;
+    margin: 139px auto 133px auto;
     padding: 15px;
-    width: 356px;
-    height: 562px;
+    width: 562px;
+    height: 356px;
     background-color: #fafafa;
 }
 #edit-image {
     position: relative;
-    width: 356px;
-    height: 562px;
+    width: 562px;
+    height: 356px;
     margin: 0px;
     padding: 0px;
     background-color: #000000;
