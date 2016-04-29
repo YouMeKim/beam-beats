@@ -26,7 +26,9 @@ $(document).ready(function() {
     });
     $('#full-screen').click(fullScreenImage);
     $('#edit-button-next').click(nextStep);
-    $('#email-button').click(sendEmail);
+    $('#email-button').click(function(event) {
+        sendEmail(event);
+    });
     $('#success-button').click(nextStep);
 
     nextStep();
@@ -36,7 +38,7 @@ $(document).ready(function() {
 /* CONTROL PAGE CHANGE */
 /***********************/
 
-var currentStep = 2;
+var currentStep = 4;
 
 function nextStep() {
     currentStep++;
@@ -159,7 +161,15 @@ function fullScreenImage() {
 /* EMAIL */
 /*********/
 
-function sendEmail() {
-    $('#email-email').val('');
-    nextStep();
+function sendEmail(event) {
+    var email = $('#email-email').val();
+
+    if (email.toLowerCase().indexOf("@") > 0 &&
+        email.toLowerCase().indexOf(".") > 0) {
+        $('#email-email').val('');
+        nextStep();
+    } else {
+        event.preventDefault();
+        $('#email-email').css('border','1px solid rgba(255,0,0,0.5)');
+    }
 }
