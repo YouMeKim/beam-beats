@@ -166,8 +166,13 @@ function sendEmail(event) {
 
     if (email.toLowerCase().indexOf("@") > 0 &&
         email.toLowerCase().indexOf(".") > 0) {
-        $('#email-email').val('');
-        nextStep();
+        $.post( "email.php", { email: email, id: "sample" })
+        .done(function( data ) {
+            $('#email-email').val('');
+            $('#email-email').css('border', '0px solid rgba(255,255,255,0)');
+            $('#email-email').css('border-bottom', '1px solid #858585');
+            nextStep();
+        });
     } else {
         event.preventDefault();
         $('#email-email').css('border','1px solid rgba(255,0,0,0.5)');
