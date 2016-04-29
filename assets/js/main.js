@@ -26,7 +26,7 @@ $(document).ready(function() {
     });
     $('#full-screen').click(fullScreenImage);
     $('#edit-button-next').click(nextStep);
-    $('#email-button').click(nextStep);
+    $('#email-button').click(sendEmail);
     $('#success-button').click(nextStep);
 
     nextStep();
@@ -36,7 +36,7 @@ $(document).ready(function() {
 /* CONTROL PAGE CHANGE */
 /***********************/
 
-var currentStep = 3;
+var currentStep = 2;
 
 function nextStep() {
     currentStep++;
@@ -153,4 +153,13 @@ function changeLayout(nodeID) {
 
 function fullScreenImage() {
     console.log("full screen image");
+}
+
+/*********/
+/* EMAIL */
+/*********/
+
+function sendEmail() {
+    $('#email-email').val('');
+    nextStep();
 }

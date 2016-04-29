@@ -15,6 +15,7 @@ body {
 
 .step {
     text-align: center;
+    font-family: "NeutrafaceText",sans-serif;
     font-size: 18px;
     font-weight: 500;
     color: #ededed;
@@ -155,9 +156,6 @@ body {
     height: 480px;
     margin: 0px;
     padding: 0px;
-    background-image: url("../img/sample.png");
-    background-size: 480px 480px;
-    background-repeat: no-repeat;
 }
 #list-recent-text {
     float: left;
