@@ -36,7 +36,7 @@ $(document).ready(function() {
 /* CONTROL PAGE CHANGE */
 /***********************/
 
-var currentStep = 0;
+var currentStep = 1;
 
 function nextStep() {
     currentStep++;
