@@ -27,7 +27,9 @@ body {
     height: 61px;
     padding: 0px;
     margin: 0px;
-    background-color: #1d1e1f;
+    /* background-color: #1d1e1f; */
+    background-color: rgba(255,255,255,0.05);
+    z-index: 5;
 }
 .nav-image {
     float: left;
@@ -273,6 +275,13 @@ body {
 #edit {
     background-color: #f0f0f0;
     overflow: auto;
+}
+#nav-back {
+    position: absolute;
+    background-color: #151214;
+    height: 61px;
+    width: 100%;
+    z-index: 1;
 }
 #edit-nav-title {
     padding: 0px;
