@@ -1,7 +1,10 @@
 $(document).ready(function() {
     $('#welcome-content').click(nextStep);
     $('#instructions-button').click(nextStep);
-    $('#list-show-more').click(loadMoreEntries);
+    loadMoreEntries(9);
+    $('#list-show-more').click(function() {
+        loadMoreEntries(6);
+    });
     $('#list-button-edit').click(nextStep);
     $('#list-button-email').click();
     $('#list-button-email').click(function() {
@@ -38,7 +41,7 @@ $(document).ready(function() {
 /* CONTROL PAGE CHANGE */
 /***********************/
 
-var currentStep = 4;
+var currentStep = 2;
 
 function nextStep() {
     currentStep++;
@@ -84,12 +87,12 @@ function moveTo(sectionName) {
 /* LOAD MORE ENTRIES INTO LIST ALL PAGE */
 /****************************************/
 
-function loadMoreEntries() {
+function loadMoreEntries(numEntries) {
     var container = $('#list-all');
     var html = "";
 
-    for (var i = 0; i < 9; i++) {
-        html += "<div class='container'><img class='preview' alt='preview' src='assets/img/sample.png'/><h1 class='preview-title'>BB.BNNY01</h1><p class='preview-time'>15 MINS AGO</p></div>";
+    for (var i = 0; i < numEntries; i++) {
+        html += "<div class='container'><img class='preview' alt='preview' src='assets/vis/sample.png'/><h1 class='preview-title'>BB.BNNY01</h1><p class='preview-time'>15 MINS AGO</p></div>";
     }
 
     container.append(html);
