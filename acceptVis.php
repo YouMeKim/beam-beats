@@ -3,25 +3,13 @@ define("HOST", "cias.rit.edu");
 define("USER", "beambeats");
 define("PASSWORD", "YRyYei600h");
 define("DATABASE", "beambeats");
-define("FILEPATH", "/assets/vis/")
+define("FILEPATH", "");
 
 if (isset($_POST['all']) && strlen($_POST['all']) > 0 &&
     isset($_POST['pur']) && strlen($_POST['pur']) > 0 &&
     isset($_POST['red']) && strlen($_POST['red']) > 0 &&
     isset($_POST['yel']) && strlen($_POST['yel']) > 0 &&
     isset($_POST['blu']) && strlen($_POST['blu']) > 0) {
-    foreach ($_POST as $key=>$value) {
-        $all = $_POST['all'];
-        file_put_contents(FILEPATH . $allName, base64_decode($all));
-        $pur = $_POST['pur'];
-        file_put_contents(FILEPATH . $purName, base64_decode($pur));
-        $red = $_POST['red'];
-        file_put_contents(FILEPATH . $redName, base64_decode($red));
-        $yel = $_POST['yel'];
-        file_put_contents(FILEPATH . $yelName, base64_decode($yel));
-        $blu = $_POST['blu'];
-        file_put_contents(FILEPATH . $bluName, base64_decode($blu));
-    }
 
     $mysqli = mysqli_connect(HOST, USER, PASSWORD, DATABASE);
     $query = "SELECT id FROM visualization GROUP BY id DESC LIMIT 1";
@@ -43,6 +31,19 @@ if (isset($_POST['all']) && strlen($_POST['all']) > 0 &&
         if (!$mysqli->query($query)) {
             echo ("Errormessage: " . $mysqli->error);
         }
+    }
+
+    foreach ($_POST as $key=>$value) {
+        $all = $_POST['all'];
+        file_put_contents(FILEPATH . $allName, base64_decode($all));
+        $pur = $_POST['pur'];
+        file_put_contents(FILEPATH . $purName, base64_decode($pur));
+        $red = $_POST['red'];
+        file_put_contents(FILEPATH . $redName, base64_decode($red));
+        $yel = $_POST['yel'];
+        file_put_contents(FILEPATH . $yelName, base64_decode($yel));
+        $blu = $_POST['blu'];
+        file_put_contents(FILEPATH . $bluName, base64_decode($blu));
     }
 } else {
     echo "did not provide proper parameters";
