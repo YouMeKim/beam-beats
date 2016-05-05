@@ -158,6 +158,11 @@ function loadMoreEntries(numEntries) {
 
             var html = "<div id='" + name + "' class='container' onclick='changeSelectedImage(\"" + name + "\");'><img class='preview' alt='preview' src='assets/vis/" + image + "'/><h1 class='preview-title'>" + name + "</h1><p class='preview-time'>" + datecreated + "</p></div>";
             container.append(html);
+
+            if (visuals.length <= i + numLoaded + 1) {
+                $('#list-show-more').remove();
+                return;
+            }
         }
     }
     numLoaded += numEntries;
