@@ -3,7 +3,7 @@ define("HOST", "cias.rit.edu");
 define("USER", "beambeats");
 define("PASSWORD", "YRyYei600h");
 define("DATABASE", "beambeats");
-define("FILEPATH", "");
+define("FILEPATH", "assets/vis/");
 
 if (isset($_POST['all']) && strlen($_POST['all']) > 0 &&
     isset($_POST['pur']) && strlen($_POST['pur']) > 0 &&
