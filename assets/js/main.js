@@ -1,7 +1,14 @@
+var visuals = [];
+var numLoaded = 1;
+
 $(document).ready(function() {
+    $.when(loadVis()).done(function() {
+        loadInitial();
+        loadMoreEntries(9);
+    });
+
     $('#welcome-content').click(nextStep);
     $('#instructions-button').click(nextStep);
-    loadMoreEntries(9);
     $('#list-show-more').click(function() {
         loadMoreEntries(6);
     });
@@ -87,24 +94,14 @@ function moveTo(sectionName) {
 /* LOAD MORE ENTRIES INTO LIST ALL PAGE */
 /****************************************/
 
-function loadMoreEntries(numEntries) {
+function loadVis() {
     var urlVis = "http://beambeats.cias.rit.edu/visualization/visualizations.php";
-    var container = $('#list-all');
-    var html = "";
 
     var jqxhr = $.getJSON(urlVis)
     .done(function(data) {
         $.each(data, function(i, vis) {
-            var id = vis.id;
-            var image = vis.image;
-            var datecreated = vis.datecreated;
-            var datemodified = vis.datemodified;
-
-            html += "<div class='container'><img class='preview' alt='preview' src='assets/vis/" + image + "'/><h1 class='preview-title'>" + id + "</h1><p class='preview-time'>" + datecreated + "</p></div>";
+            visuals.push(vis);
         });
-
-
-        console.log(data);
     })
     .fail(function() {
         console.log("error loading json stream from " + urlVis);
@@ -113,9 +110,46 @@ function loadMoreEntries(numEntries) {
 
     });
 
-    container.append(html);
-
     return jqxhr;
+}
+
+function loadInitial() {
+    var nameContainer = $('#list-recent-title');
+    var dateContainer = $('#list-recent-time');
+    var imageContainer = $('#list-recent-image');
+
+    var vis = visuals[0];
+    var id = vis.id;
+    var name = vis.name;
+    var image = vis.imageall;
+    var datecreated = vis.datecreated;
+
+    nameContainer.html(name);
+    dateContainer.html(datecreated);
+    imageContainer.attr('src', 'assets/vis/' + image);
+}
+
+function loadMoreEntries(numEntries) {
+    console.log("loadMoreEntries " + numEntries + " with " + numLoaded + " loaded entries");
+    var container = $('#list-all');
+
+    for(var i = 0; i < numEntries; i++) {
+        if (visuals.length <= i + numLoaded) {
+            $('#list-show-more').remove();
+            return;
+        } else {
+            var num = i + numLoaded;
+            var vis = visuals[num];
+            var id = vis.id;
+            var name = vis.name;
+            var image = vis.imageall;
+            var datecreated = vis.datecreated;
+
+            var html = "<div class='container'><img class='preview' alt='preview' src='assets/vis/" + image + "'/><h1 class='preview-title'>" + name + "</h1><p class='preview-time'>" + datecreated + "</p></div>";
+            container.append(html);
+        }
+    }
+    numLoaded += numEntries;
 }
 
 /**********************/
