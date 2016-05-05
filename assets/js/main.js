@@ -88,14 +88,34 @@ function moveTo(sectionName) {
 /****************************************/
 
 function loadMoreEntries(numEntries) {
+    var urlVis = "http://beambeats.cias.rit.edu/visualization/visualizations.php";
     var container = $('#list-all');
     var html = "";
 
-    for (var i = 0; i < numEntries; i++) {
-        html += "<div class='container'><img class='preview' alt='preview' src='assets/vis/sample.png'/><h1 class='preview-title'>BB.BNNY01</h1><p class='preview-time'>15 MINS AGO</p></div>";
-    }
+    var jqxhr = $.getJSON(urlVis)
+    .done(function(data) {
+        $.each(data, function(i, vis) {
+            var id = vis.id;
+            var image = vis.image;
+            var datecreated = vis.datecreated;
+            var datemodified = vis.datemodified;
+
+            html += "<div class='container'><img class='preview' alt='preview' src='assets/vis/" + image + "'/><h1 class='preview-title'>" + id + "</h1><p class='preview-time'>" + datecreated + "</p></div>";
+        });
+
+
+        console.log(data);
+    })
+    .fail(function() {
+        console.log("error loading json stream from " + urlVis);
+    });
+    jqxhr.complete(function() {
+
+    });
 
     container.append(html);
+
+    return jqxhr;
 }
 
 /**********************/
