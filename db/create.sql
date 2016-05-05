@@ -6,6 +6,7 @@ DROP TABLE IF EXISTS visualization;
 
 CREATE TABLE visualization (
     id              INT             NOT NULL    AUTO_INCREMENT,
+    name            VARCHAR(255)    NOT NULL,
     imageall        VARCHAR(255)    NOT NULL,
     imagepur        VARCHAR(255)    NOT NULL,
     imagered        VARCHAR(255)    NOT NULL,
@@ -35,4 +36,4 @@ CREATE TABLE history (
     CONSTRAINT fk_history_visualizationid FOREIGN KEY (visualizationid) REFERENCES creation(id)
 );
 
-INSERT INTO visualization(imageall,imagepur,imagered,imageyel,imageblu,datecreated) VALUES("sample.png",NOW());
+INSERT INTO visualization(name,imageall,imagepur,imagered,imageyel,imageblu,datecreated) VALUES("sample","sample.png","sample.png","sample.png","sample.png","sample.png",NOW());
