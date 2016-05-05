@@ -1,5 +1,7 @@
 var visuals = [];
 var numLoaded = 1;
+var firstImage = "sample.png";
+var selectedImage = "sample.png";
 
 $(document).ready(function() {
     $.when(loadVis()).done(function() {
@@ -12,7 +14,10 @@ $(document).ready(function() {
     $('#list-show-more').click(function() {
         loadMoreEntries(6);
     });
-    $('#list-button-edit').click(nextStep);
+    $('#list-button-edit').click(function() {
+        selectedImage = firstImage;
+        nextStep();
+    });
     $('#list-button-email').click();
     $('#list-button-email').click(function() {
         currentStep = 4;
@@ -87,6 +92,10 @@ function openInstructionPage() {
 }
 
 function moveTo(sectionName) {
+    if (sectionName == "edit") {
+        console.log("changing image to " + selectedImage);
+        $('#image').attr('src','assets/vis/' + selectedImage + "all.png");
+    }
     $('#' + sectionName).fadeIn(300).siblings().hide();
 }
 
@@ -124,13 +133,15 @@ function loadInitial() {
     var image = vis.imageall;
     var datecreated = vis.datecreated;
 
+    firstImage = name;
+    selectedImage = firstImage;
+
     nameContainer.html(name);
     dateContainer.html(datecreated);
     imageContainer.attr('src', 'assets/vis/' + image);
 }
 
 function loadMoreEntries(numEntries) {
-    console.log("loadMoreEntries " + numEntries + " with " + numLoaded + " loaded entries");
     var container = $('#list-all');
 
     for(var i = 0; i < numEntries; i++) {
@@ -145,11 +156,16 @@ function loadMoreEntries(numEntries) {
             var image = vis.imageall;
             var datecreated = vis.datecreated;
 
-            var html = "<div class='container'><img class='preview' alt='preview' src='assets/vis/" + image + "'/><h1 class='preview-title'>" + name + "</h1><p class='preview-time'>" + datecreated + "</p></div>";
+            var html = "<div id='" + name + "' class='container' onclick='changeSelectedImage(\"" + name + "\");'><img class='preview' alt='preview' src='assets/vis/" + image + "'/><h1 class='preview-title'>" + name + "</h1><p class='preview-time'>" + datecreated + "</p></div>";
             container.append(html);
         }
     }
     numLoaded += numEntries;
+}
+
+function changeSelectedImage(name) {
+    selectedImage = name;
+    nextStep();
 }
 
 /**********************/
