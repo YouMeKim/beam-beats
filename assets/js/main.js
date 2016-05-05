@@ -1,7 +1,7 @@
 var visuals = [];
 var numLoaded = 1;
-var firstImage = "sample.png";
-var selectedImage = "sample.png";
+var firstImage = "sample";
+var selectedImage = "sample";
 
 $(document).ready(function() {
     $.when(loadVis()).done(function() {
@@ -39,7 +39,7 @@ $(document).ready(function() {
     $('.layout-container').click(function(event) {
         changeLayout(event.target.id);
     });
-    $('#full-screen').click(fullScreenImage);
+    /* $('#full-screen').click(fullScreenImage); */
     $('#edit-button-next').click(nextStep);
     $('#email-button').click(function(event) {
         sendEmail(event);
@@ -83,18 +83,10 @@ function nextStep() {
     }
 }
 
-function openWelcomePage() {
-    console.log("welcome page");
-}
-
-function openInstructionPage() {
-    console.log("instruction page");
-}
-
 function moveTo(sectionName) {
     if (sectionName == "edit") {
-        console.log("changing image to " + selectedImage);
         $('#image').attr('src','assets/vis/' + selectedImage + "all.png");
+        $('#image-background').attr('src','assets/vis/' + selectedImage + 'all.png');
     }
     $('#' + sectionName).fadeIn(300).siblings().hide();
 }
@@ -181,7 +173,9 @@ var id = "";
 
 function changeColor(nodeID) {
     var activeOne = $('#' + nodeID);
+    var color = nodeID.split('-')[2].substring(0, 3);
     $('.swatch-color').removeClass('active');
+    $('#image').attr('src','assets/vis/' + selectedImage + color + ".png");
     activeOne.addClass('active');
 }
 
@@ -229,10 +223,6 @@ function changeLayout(nodeID) {
     $('.layout-title').removeClass('layout-title-active');
     $('#' + layout).addClass('layout-active');
     $('#' + title).addClass('layout-title-active');
-}
-
-function fullScreenImage() {
-    console.log("full screen image");
 }
 
 /*********/

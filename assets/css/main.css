@@ -371,22 +371,33 @@ body {
 #edit-image {
     position: relative;
     width: 562px;
-    height: 356px;
+    height: 293px;
     margin: 0px;
-    padding: 0px;
+    padding: 31.5px 0px;
     background-color: #000000;
+}
+#image-background {
+    position: absolute;
+    top: 31.5px;
+    bottom: 31.5px;
+    left: 0;
+    right: 0;
+    margin: 0px auto;
+    opacity: .4;
+    width: 293px;
+    height: 293px;
+    z-index: 1;
 }
 #image {
     position: relative;
-    top: 50%;
-    transform: translateY(-50%);
+    margin: 0px auto;
     display: block;
     width: 293px;
     height: 293px;
-    margin: 0px auto;
+    z-index: 2;
 }
 #edit-layouts {
-    width: 282px;
+    width: 296px;
     height: 29px;
     margin: 0px auto;
     font-weight: 500;
@@ -580,3 +591,14 @@ body {
     cursor: pointer;
 }
 .modal-button-later { margin-left: 41px; }
+#discard-edits-cancel {
+    font-family: "NeutrafaceDisplay",sans-serif;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    line-height: 25px;}
+#discard-edits-yes {
+    font-family: "NeutrafaceDisplay",sans-serif;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    line-height: 25px;
+}
