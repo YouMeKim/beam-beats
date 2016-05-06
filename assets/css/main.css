@@ -368,12 +368,22 @@ body {
     height: 356px;
     background-color: #fafafa;
 }
+#image-filter {
+    position: absolute;
+    bottom: 25px;
+    right: 25px;
+    width: 100px;
+    height: 100px;
+    background-size: 100px 100px;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
 #edit-image {
     position: relative;
-    width: 562px;
+    width: 499px;
     height: 293px;
     margin: 0px;
-    padding: 31.5px 0px;
+    padding: 31.5px;
     background-color: #000000;
 }
 #image-background {
@@ -490,6 +500,7 @@ body {
     color: #858585;
     border: 0px;
     border-bottom: 1px solid #858585;
+    text-transform: uppercase;
 }
 #email-button {
     display: block;

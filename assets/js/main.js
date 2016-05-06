@@ -88,6 +88,7 @@ function moveTo(sectionName) {
         $('#image').attr('src','assets/vis/' + selectedImage + "all.png");
         $('#image-background').attr('src','assets/vis/' + selectedImage + 'all.png');
         changeColor("swatch-color-all");
+        changeLogo("swatch-logo-none");
     }
     $('#' + sectionName).fadeIn(300).siblings().hide();
 }
@@ -182,6 +183,9 @@ function changeColor(nodeID) {
 
 function changeLogo(nodeID) {
     var activeOne = $('#' + nodeID);
+    var name = nodeID.split("-")[2];
+    console.log(name);
+    $('#image-filter').css('background-image','url(assets/img/logo-' + name + '.png)');
     $('.swatch-logo').removeClass('active');
     $('.swatch-logo').css('background-position','0px 0px');
     activeOne.addClass('active');
