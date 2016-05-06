@@ -87,6 +87,7 @@ function moveTo(sectionName) {
     if (sectionName == "edit") {
         $('#image').attr('src','assets/vis/' + selectedImage + "all.png");
         $('#image-background').attr('src','assets/vis/' + selectedImage + 'all.png');
+        changeColor("swatch-color-all");
     }
     $('#' + sectionName).fadeIn(300).siblings().hide();
 }
