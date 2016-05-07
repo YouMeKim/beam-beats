@@ -184,7 +184,6 @@ function changeColor(nodeID) {
 function changeLogo(nodeID) {
     var activeOne = $('#' + nodeID);
     var name = nodeID.split("-")[2];
-    console.log(name);
     $('#image-filter').css('background-image','url(assets/img/logo-' + name + '.png)');
     $('.swatch-logo').removeClass('active');
     $('.swatch-logo').css('background-position','0px 0px');
@@ -235,17 +234,31 @@ function changeLayout(nodeID) {
 /*********/
 
 function sendEmail(event) {
+    // get email from input
     var email = $('#email-email').val();
 
     if (email.toLowerCase().indexOf("@") > 0 &&
         email.toLowerCase().indexOf(".") > 0) {
-        $.post( "email.php", { email: email, id: "sample" })
-        .done(function( data ) {
-            $('#email-email').val('');
-            $('#email-email').css('border', '0px solid rgba(255,255,255,0)');
-            $('#email-email').css('border-bottom', '1px solid #858585');
-            nextStep();
+        var imageContainer = $("#edit-image-container");
+        var image;
+
+        html2canvas(imageContainer, {
+            onrendered: function(canvas) {
+
+                image = canvas.toDataURL("image/png");
+                console.log("selectedImage:" + selectedImage + " image:" + image);
+
+                $.post( "email.php", { email: email, id: selectedImage , data: image })
+                .done(function( data ) {
+                    $('#email-email').val('');
+                    $('#email-email').css('border', '0px solid rgba(255,255,255,0)');
+                    $('#email-email').css('border-bottom', '1px solid #858585');
+                    nextStep();
+                });
+            }
         });
+        /* REMOVE THI LATER */
+        event.preventDefault();
     } else {
         event.preventDefault();
         $('#email-email').css('border','1px solid rgba(255,0,0,0.5)');
