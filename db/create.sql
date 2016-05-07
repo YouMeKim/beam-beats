@@ -29,11 +29,11 @@ CREATE TABLE creation (
 
 CREATE TABLE history (
     id              INT             NOT NULL    AUTO_INCREMENT,
-    visualizationid INT             NOT NULL,
+    creationid      INT             NOT NULL,
     datesent        DATETIME        NOT NULL,
     email           VARCHAR(255)    NOT NULL,
     PRIMARY KEY (id),
-    CONSTRAINT fk_history_visualizationid FOREIGN KEY (visualizationid) REFERENCES creation(id)
+    CONSTRAINT fk_history_visualizationid FOREIGN KEY (creationid) REFERENCES creation(id)
 );
 
 INSERT INTO visualization(name,imageall,imagepur,imagered,imageyel,imageblu,datecreated) VALUES("sample","sample.png","sample.png","sample.png","sample.png","sample.png",NOW());
