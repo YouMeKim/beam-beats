@@ -83,6 +83,12 @@ function nextStep() {
     }
 }
 
+function startOver() {
+    console.log("welcome");
+    currentStep = 0;
+    nextStep();
+}
+
 function moveTo(sectionName) {
     if (sectionName == "edit") {
         $('#image').attr('src','assets/vis/' + selectedImage + "all.png");

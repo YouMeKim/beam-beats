@@ -39,6 +39,7 @@ body {
     margin: 8px 14px;
     background-image: url("../img/BBLogoMini.png");
     background-size: 54px 45px;
+    cursor: pointer;
 }
 .nav-button {
     position: absolute;
