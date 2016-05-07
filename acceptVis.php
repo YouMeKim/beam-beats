@@ -15,22 +15,24 @@ if (isset($_POST['all']) && strlen($_POST['all']) > 0 &&
     $query = "SELECT id FROM visualization GROUP BY id DESC LIMIT 1";
     if (!$result = $mysqli->query($query)) {
         echo ("Errormessage: " . $mysqli->error);
+        $nweId = 1;
     } else {
         $row = mysqli_fetch_assoc($result);
         $newId = $row['id'] + 1;
-        $newName = "BB." . str_pad($newId, 5, "0", STR_PAD_LEFT);
-        $allName = $newName . "all.png";
-        $purName = $newName . "pur.png";
-        $redName = $newName . "red.png";
-        $yelName = $newName . "yel.png";
-        $bluName = $newName . "blu.png";
-        echo $newId . "<br>" . $newName . "<br>" . $allName . "<br>" . $purName . "<br>" . $redName . "<br>" . $yelName . "<br>" . $bluName;
-        $query = "INSERT INTO visualization
-                    (name, imageall, imagepur, imagered, imageyel, imageblu, datecreated)
-                    VALUES ('$newName', '$allName', '$purName', '$redName', '$yelName', '$bluName', NOW())";
-        if (!$mysqli->query($query)) {
-            echo ("Errormessage: " . $mysqli->error);
-        }
+    }
+
+    $newName = "BB." . str_pad($newId, 5, "0", STR_PAD_LEFT);
+    $allName = $newName . "all.png";
+    $purName = $newName . "pur.png";
+    $redName = $newName . "red.png";
+    $yelName = $newName . "yel.png";
+    $bluName = $newName . "blu.png";
+    echo $newId . "<br>" . $newName . "<br>" . $allName . "<br>" . $purName . "<br>" . $redName . "<br>" . $yelName . "<br>" . $bluName;
+    $query = "INSERT INTO visualization
+                (name, imageall, imagepur, imagered, imageyel, imageblu, datecreated)
+                VALUES ('$newName', '$allName', '$purName', '$redName', '$yelName', '$bluName', NOW())";
+    if (!$mysqli->query($query)) {
+        echo ("Errormessage: " . $mysqli->error);
     }
 
     foreach ($_POST as $key=>$value) {
