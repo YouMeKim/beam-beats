@@ -5,10 +5,7 @@ var selectedImage = "sample";
 var canvas;
 
 $(document).ready(function() {
-    $.when(loadVis()).done(function() {
-        loadInitial();
-        loadMoreEntries(9);
-    });
+    reloadVis();
 
     $('#welcome-content').click(nextStep);
     $('#instructions-button').click(nextStep);
@@ -60,6 +57,14 @@ $(document).ready(function() {
     nextStep();
 });
 
+function reloadVis() {
+    $.when(loadVis()).done(function() {
+        loadInitial();
+        $('#list-all').empty();
+        loadMoreEntries(9);
+    });
+}
+
 /***********************/
 /* CONTROL PAGE CHANGE */
 /***********************/
@@ -73,6 +78,7 @@ function nextStep() {
             moveTo("welcome");
             break;
         case 2:
+            reloadVis();
             moveTo("instructions");
             break;
         case 3:
@@ -116,6 +122,7 @@ function moveTo(sectionName) {
 
 function loadVis() {
     var urlVis = "http://beambeats.cias.rit.edu/visualization/visualizations.php";
+    visuals = [];
 
     var jqxhr = $.getJSON(urlVis)
     .done(function(data) {
