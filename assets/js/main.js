@@ -58,6 +58,7 @@ $(document).ready(function() {
 });
 
 function reloadVis() {
+    numLoaded = 1;
     $.when(loadVis()).done(function() {
         loadInitial();
         $('#list-all').empty();
