@@ -8,9 +8,9 @@ define("FILEPATH", "assets/vis/creation/");
 $email = $_POST['email'];
 $name = $_POST['id'];
 $data = $_POST['data'];
-$sender = "yxk6281@rit.edu";
+$sender = "bandthelazers@gmail.com";
 
-$file = "test.png";
+$file = "sample.png";
 
 $mysqli = mysqli_connect(HOST, USER, PASSWORD, DATABASE);
 
@@ -20,11 +20,11 @@ if (!$result = $mysqli->query($query)) {
 } else {
     $row = mysqli_fetch_assoc($result);
     $id = $row['id'];
+    $newId = 1;
 
     $query = "SELECT id FROM creation GROUP BY id DESC LIMIT 1";
     if (!$result = $mysqli->query($query)) {
         echo ("Errormessage: " . $mysqli->error);
-        $newId = 1;
     } else {
         $row = mysqli_fetch_assoc($result);
         $newId = $row['id'] + 1;
