@@ -581,6 +581,7 @@ body {
     font-weight: 500;
     text-align: center;
     letter-spacing: 0.05em;
+    line-height: 30px;
     color: #767676;
 }
 .remodal .buttons {
@@ -604,13 +605,20 @@ body {
 }
 .modal-button-later { margin-left: 41px; }
 #discard-edits-cancel {
+    width: 175px;
+    height: 64px;
     font-family: "NeutrafaceDisplay",sans-serif;
     font-weight: 500;
     letter-spacing: 0.05em;
-    line-height: 25px;}
+    line-height: 19px;
+    border-radius: 32px;
+}
 #discard-edits-yes {
+    width: 175px;
+    height: 64px;
     font-family: "NeutrafaceDisplay",sans-serif;
     font-weight: 500;
     letter-spacing: 0.05em;
-    line-height: 25px;
+    line-height: 19px;
+    border-radius: 32px;
 }
