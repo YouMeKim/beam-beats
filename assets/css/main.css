@@ -254,6 +254,7 @@ body {
     margin: 0px;
     background: #29253b;
     background-image: url('../img/tilegradientbackground.png');
+    background-size: 270px 270px;
     /*
     background: -webkit-linear-gradient(180deg, #29253b, #28212b);
     background: -o-linear-gradient(180deg, #29253b, #28212b);
@@ -372,9 +373,9 @@ body {
     position: absolute;
     bottom: 25px;
     right: 25px;
-    width: 100px;
-    height: 100px;
-    background-size: 100px 100px;
+    width: 75px;
+    height: 75px;
+    background-size: 75px 75px;
     background-repeat: no-repeat;
     background-position: center center;
 }

@@ -200,6 +200,8 @@ function changeSize(nodeID) {
 function changeLayout(nodeID) {
     var editImageContainer = $('#edit-image-container');
     var editImage = $('#edit-image');
+    var imageDiv = $('#image');
+    var imageBg = $('#image-background');
 
     if (nodeID.indexOf("-") > -1) {
         nodeID = nodeID.split("-")[0];
@@ -210,15 +212,19 @@ function changeLayout(nodeID) {
         editImageContainer.css("height", "562px");
         editImageContainer.css("margin-top", "36px");
         editImageContainer.css("margin-bottom", "30px");
-        editImage.css("width", "356px");
-        editImage.css("height", "562px");
+        editImage.css("width", "293px");
+        editImage.css("height", "499px");
+        imageDiv.css("margin", "100px auto");
+        imageBg.css("margin", "100px auto");
     } else {
         editImageContainer.css("width", "562px");
         editImageContainer.css("height", "356px");
         editImageContainer.css("margin-top", "139px");
         editImageContainer.css("margin-bottom", "133px");
-        editImage.css("width", "562px");
-        editImage.css("height", "356px");
+        editImage.css("width", "499px");
+        editImage.css("height", "293px");
+        imageDiv.css("margin", "0px auto");
+        imageBg.css("margin", "0px auto");
     }
 
     var layout = nodeID + "-layout";
@@ -239,14 +245,15 @@ function sendEmail(event) {
 
     if (email.toLowerCase().indexOf("@") > 0 &&
         email.toLowerCase().indexOf(".") > 0) {
-        var imageContainer = $("#edit-image-container");
+        var editImageContainer = $("#edit-image-container");
         var image;
 
-        html2canvas(imageContainer, {
+        html2canvas(editImageContainer, {
             onrendered: function(canvas) {
 
                 image = canvas.toDataURL("image/png");
-                console.log("selectedImage:" + selectedImage + " image:" + image);
+                console.log(editImageContainer);
+                console.log(image);
 
                 $.post( "email.php", { email: email, id: selectedImage , data: image })
                 .done(function( data ) {
