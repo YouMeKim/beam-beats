@@ -2,6 +2,7 @@ var visuals = [];
 var numLoaded = 1;
 var firstImage = "sample";
 var selectedImage = "sample";
+var canvas;
 
 $(document).ready(function() {
     $.when(loadVis()).done(function() {
@@ -40,7 +41,17 @@ $(document).ready(function() {
         changeLayout(event.target.id);
     });
     /* $('#full-screen').click(fullScreenImage); */
-    $('#edit-button-next').click(nextStep);
+    $('#edit-button-next').click(function(event) {
+        var editImageContainer = $("#edit-image");
+
+        html2canvas(editImageContainer, {
+            onrendered: function(c) {
+                canvas = c;
+                console.log(canvas);
+            }
+        });
+        nextStep();
+    });
     $('#email-button').click(function(event) {
         sendEmail(event);
     });
@@ -53,7 +64,7 @@ $(document).ready(function() {
 /* CONTROL PAGE CHANGE */
 /***********************/
 
-var currentStep = 0;
+var currentStep = 2;
 
 function nextStep() {
     currentStep++;
@@ -251,24 +262,19 @@ function sendEmail(event) {
 
     if (email.toLowerCase().indexOf("@") > 0 &&
         email.toLowerCase().indexOf(".") > 0) {
-        var editImageContainer = $("#edit-image-container");
+        var editImageContainer = $("#edit-image");
         var image;
 
-        html2canvas(editImageContainer, {
-            onrendered: function(canvas) {
+        image = canvas.toDataURL("image/png");
+        console.log(canvas);
+        console.log(image);
 
-                image = canvas.toDataURL("image/png");
-                console.log(editImageContainer);
-                console.log(image);
-
-                $.post( "email.php", { email: email, id: selectedImage , data: image })
-                .done(function( data ) {
-                    $('#email-email').val('');
-                    $('#email-email').css('border', '0px solid rgba(255,255,255,0)');
-                    $('#email-email').css('border-bottom', '1px solid #858585');
-                    nextStep();
-                });
-            }
+        $.post( "email.php", { email: email, id: selectedImage , data: image })
+        .done(function( data ) {
+            $('#email-email').val('');
+            $('#email-email').css('border', '0px solid rgba(255,255,255,0)');
+            $('#email-email').css('border-bottom', '1px solid #858585');
+            nextStep();
         });
         /* REMOVE THI LATER */
         event.preventDefault();
