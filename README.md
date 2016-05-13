@@ -4,21 +4,27 @@ Beam Beats Website
 Setup & Installation
 ------------------
 
-The Beam Beats website is built
+The Beam Beats website is built in PHP with a MySQL database.
 
 - Install [PHP](http://php.net/manual/en/install.php) and all dependances
 - Install [MySQL](http://dev.mysql.com/downloads/) and all dependances
 - Edit [DB Access File](https://github.com/YouMeKim/beam-beats/blob/master/db/access.php)
+	- Located in assets/db/access.php
 	- HOST, USER, PASSWORD, DATABASE
 - Run [DB Creation Script](https://github.com/YouMeKim/beam-beats/blob/master/db/create.sql)
 	- Located in assets/db/create.sql
 
-Usage & Training
+Utilizing Visualization API
 ------------------
 
-blah Blah
+Calls to [visualizations.php](https://github.com/YouMeKim/beam-beats/blob/master/visualizations.php) will return an array of JSON objects.
 
-Other
-------------------
-
-asdf
+- id			int
+- name			string
+- imageall		string
+- imagepur		string
+- imagered		string
+- imageyel		string
+- imageblu		string
+- datecreated	string
+- datemodified	string
