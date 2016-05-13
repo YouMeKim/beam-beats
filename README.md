@@ -1,6 +1,8 @@
 # Beam Beats Website
 Beam Beats Website
 
+The Beam Beats website is built in HTML JavaScript with support form a PHP, MySQL backend.
+
 Setup
 ------------------
 
@@ -13,6 +15,8 @@ The Beam Beats website is built in PHP with a MySQL database.
 	- HOST, USER, PASSWORD, DATABASE
 - Run [Database Creation Script](https://github.com/YouMeKim/beam-beats/blob/master/db/create.sql)
 	- Located in assets/db/create.sql
+- Change [Email Configuration](https://github.com/YouMeKim/beam-beats/blob/master/email.php) such as sender
+	- Located in email.php
 
 Utilizing Visualization API
 ------------------
@@ -44,4 +48,4 @@ Posting data to [acceptVis.php](https://github.com/YouMeKim/beam-beats/blob/mast
 - yel
 - blu
 
-All parameters should be base64 encoded images.
+All parameters should be base64 encoded images represented as strings.
