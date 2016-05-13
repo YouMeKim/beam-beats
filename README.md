@@ -1,7 +1,7 @@
 # Beam Beats Website
 Beam Beats Website
 
-Setup & Installation
+Setup
 ------------------
 
 The Beam Beats website is built in PHP with a MySQL database.
@@ -14,7 +14,7 @@ The Beam Beats website is built in PHP with a MySQL database.
 - Run [Database Creation Script](https://github.com/YouMeKim/beam-beats/blob/master/db/create.sql)
 	- Located in assets/db/create.sql
 
-Utilizing visualization.php
+Utilizing Visualization API
 ------------------
 
 Calls to [visualizations.php](https://github.com/YouMeKim/beam-beats/blob/master/visualizations.php) will return an array of JSON objects.
@@ -32,3 +32,16 @@ Each JSON object contains the following attributes:
 - datemodified [string]
 
 ** [visualizations.php](https://github.com/YouMeKim/beam-beats/blob/master/visualizations.php) utilizes the [Database Access File](https://github.com/YouMeKim/beam-beats/blob/master/db/access.php). Insure all constants are properly set before attempting to run queries against the database.
+
+Sending Data to Database
+------------------
+
+Posting data to [acceptVis.php](https://github.com/YouMeKim/beam-beats/blob/master/acceptVis.php) will insert data into the database. Required parameters are as follows:
+
+- all
+- pur
+- red
+- yel
+- blu
+
+All parameters should be base64 encoded images.
