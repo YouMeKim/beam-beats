@@ -1,8 +1,5 @@
 <?php
-define("HOST", "cias.rit.edu");
-define("USER", "beambeats");
-define("PASSWORD", "YRyYei600h");
-define("DATABASE", "beambeats");
+require_once('db/access.php');
 
 $mysqli = mysqli_connect(HOST, USER, PASSWORD, DATABASE);
 $query = "SELECT * FROM visualization ORDER BY datecreated DESC";

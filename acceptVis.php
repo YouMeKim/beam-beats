@@ -1,8 +1,5 @@
 <?php
-define("HOST", "cias.rit.edu");
-define("USER", "beambeats");
-define("PASSWORD", "YRyYei600h");
-define("DATABASE", "beambeats");
+require_once('db/access.php');
 define("FILEPATH", "assets/vis/");
 
 if (isset($_POST['all']) && strlen($_POST['all']) > 0 &&
