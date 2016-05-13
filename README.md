@@ -1,6 +1,17 @@
 # Beam Beats Website
 Beam Beats Website
-```
-TEST
 
-```
+Setup & Installation
+------------------
+
+Blah blah
+
+Usage & Training
+------------------
+
+blah Blah
+
+Other
+------------------
+
+asdf
