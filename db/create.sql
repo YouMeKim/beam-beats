@@ -1,5 +1,7 @@
+# utilize database beambeats
 USE beambeats;
 
+# drop tables if already in existance
 DROP TABLE IF EXISTS history;
 DROP TABLE IF EXISTS creation;
 DROP TABLE IF EXISTS visualization;
@@ -36,4 +38,4 @@ CREATE TABLE history (
     CONSTRAINT fk_history_visualizationid FOREIGN KEY (creationid) REFERENCES creation(id)
 );
 
-INSERT INTO visualization(name,imageall,imagepur,imagered,imageyel,imageblu,datecreated) VALUES("sample","sample.png","sample.png","sample.png","sample.png","sample.png",NOW());
+# INSERT INTO visualization(name,imageall,imagepur,imagered,imageyel,imageblu,datecreated) VALUES("sample","sample.png","sample.png","sample.png","sample.png","sample.png",NOW());

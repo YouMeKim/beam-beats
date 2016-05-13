@@ -1,9 +1,13 @@
-var visuals = [];
+var visuals = []; // array of visualization objects
 var numLoaded = 1;
 var firstImage = "sample";
 var selectedImage = "sample";
 var canvas;
 
+/*
+ * Implements all click action listeners to various sections
+ * Will not be called until all elements on page have loaded
+ */
 $(document).ready(function() {
     reloadVis();
 
@@ -44,7 +48,6 @@ $(document).ready(function() {
         html2canvas(editImageContainer, {
             onrendered: function(c) {
                 canvas = c;
-                console.log(canvas);
             }
         });
         nextStep();
@@ -57,6 +60,10 @@ $(document).ready(function() {
     nextStep();
 });
 
+/*
+ * Remove all visualization from list section
+ * Called after Welcome section so we can refresh data between users
+ */
 function reloadVis() {
     numLoaded = 1;
     $.when(loadVis()).done(function() {
@@ -70,8 +77,12 @@ function reloadVis() {
 /* CONTROL PAGE CHANGE */
 /***********************/
 
-var currentStep = 0;
+var currentStep = 0; // controls currently displayed section
 
+/*
+ * Handles incrementaiton of currentStep and actively displayed sections
+ * May call additional methods depending on what step we are on
+ */
 function nextStep() {
     currentStep++;
     switch(currentStep) {
@@ -101,12 +112,18 @@ function nextStep() {
     }
 }
 
+/*
+ * Start page over at welcome screen
+ */
 function startOver() {
-    console.log("welcome");
     currentStep = 0;
     nextStep();
 }
 
+/*
+ * Switches active section
+ * @param {string} sectionName the name of the section to be made active
+ */
 function moveTo(sectionName) {
     if (sectionName == "edit") {
         $('#image').attr('src','assets/vis/' + selectedImage + "all.png");
@@ -121,6 +138,9 @@ function moveTo(sectionName) {
 /* LOAD MORE ENTRIES INTO LIST ALL PAGE */
 /****************************************/
 
+/*
+ * Repopulate array of JSON objects into variable
+ */
 function loadVis() {
     var urlVis = "http://beambeats.cias.rit.edu/visualization/visualizations.php";
     visuals = [];
@@ -141,6 +161,11 @@ function loadVis() {
     return jqxhr;
 }
 
+/*
+ * Load initial visualization to page
+ * Most recent visualization to be created
+ * Top entry that isn't included in grid
+ */
 function loadInitial() {
     var nameContainer = $('#list-recent-title');
     var dateContainer = $('#list-recent-time');
@@ -160,6 +185,11 @@ function loadInitial() {
     imageContainer.attr('src', 'assets/vis/' + image);
 }
 
+/*
+ * Load more visualization entries to the list section
+ * Removes 'LOAD MORE' button when we run out of entries
+ * @param {int} numEntries number of entries to be loaded
+ */
 function loadMoreEntries(numEntries) {
     var container = $('#list-all');
 
@@ -187,6 +217,11 @@ function loadMoreEntries(numEntries) {
     numLoaded += numEntries;
 }
 
+/*
+ * Change actively edited visualization from database
+ * Called on click of visualization from list section
+ * @param {string} name of visualization from database
+ */
 function changeSelectedImage(name) {
     selectedImage = name;
     nextStep();
@@ -198,6 +233,10 @@ function changeSelectedImage(name) {
 
 var id = "";
 
+/*
+ * Change active color filter of editing visualization
+ * @param {string} nodeID id of clicked element
+ */
 function changeColor(nodeID) {
     var activeOne = $('#' + nodeID);
     var color = nodeID.split('-')[2].substring(0, 3);
@@ -206,6 +245,10 @@ function changeColor(nodeID) {
     activeOne.addClass('active');
 }
 
+/*
+ * Change displayed logo filter on editing visualization
+ * @param {string} nodeID id of clicked element
+ */
 function changeLogo(nodeID) {
     var activeOne = $('#' + nodeID);
     var name = nodeID.split("-")[2];
@@ -216,12 +259,21 @@ function changeLogo(nodeID) {
     activeOne.css('background-position','-3px -3px');
 }
 
+/*
+ * THIS WILL NO LONGER BE IMPLEMENTED
+ * Change size of paper displayed
+ * @param {string} nodeID id of clicked element
+ */
 function changeSize(nodeID) {
     var activeOne = $('#' + nodeID);
     $('.swatch-size').removeClass('active');
     activeOne.addClass('active');
 }
 
+/*
+ * Change the layout of the edited visualization between portrait and landscape
+ * @param {string} nodeID id of clicked element
+ */
 function changeLayout(nodeID) {
     var editImageContainer = $('#edit-image-container');
     var editImage = $('#edit-image');
@@ -264,19 +316,24 @@ function changeLayout(nodeID) {
 /* EMAIL */
 /*********/
 
+/*
+ * Send email to input email with selected creation
+ */
 function sendEmail(event) {
     // get email from input
     var email = $('#email-email').val();
 
+    // insure input email is valid email
+    // must contain '@' and '.' characters
     if (email.toLowerCase().indexOf("@") > 0 &&
         email.toLowerCase().indexOf(".") > 0) {
         var editImageContainer = $("#edit-image");
         var image;
 
+        // convert canvas element to base64 string
         image = canvas.toDataURL("image/png");
-        console.log(canvas);
-        console.log(image);
 
+        // send base64 string to email.php as POST parameter
         $.post( "email.php", { email: email, id: selectedImage , data: image })
         .done(function( data ) {
             $('#email-email').val('');
@@ -284,10 +341,8 @@ function sendEmail(event) {
             $('#email-email').css('border-bottom', '1px solid #858585');
             nextStep();
         });
-        /* REMOVE THI LATER */
-        event.preventDefault();
     } else {
-        event.preventDefault();
-        $('#email-email').css('border','1px solid rgba(255,0,0,0.5)');
+        event.preventDefault(); // prevent rerouting
+        $('#email-email').css('border','1px solid rgba(255,0,0,0.5)'); // error indication
     }
 }
