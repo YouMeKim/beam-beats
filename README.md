@@ -1,7 +1,7 @@
 # Beam Beats Website
 Beam Beats Website
 
-The Beam Beats website is built in HTML JavaScript with support form a PHP, MySQL backend.
+The Beam Beats website is built in HTML and JavaScript with support from a PHP, MySQL backend.
 
 Using Beam Beats
 ------------------
@@ -59,7 +59,7 @@ Each JSON object contains the following attributes:
 - datecreated [string]
 - datemodified [string]
 
-** [visualizations.php](https://github.com/YouMeKim/beam-beats/blob/master/visualizations.php) utilizes the [Database Access File](https://github.com/YouMeKim/beam-beats/blob/master/db/access.php). Insure all constants are properly set before attempting to run queries against the database.
+*[visualizations.php](https://github.com/YouMeKim/beam-beats/blob/master/visualizations.php) utilizes the [Database Access File](https://github.com/YouMeKim/beam-beats/blob/master/db/access.php). Insure all constants are properly set before attempting to run queries against the database.*
 
 Sending Data to Database
 ------------------
